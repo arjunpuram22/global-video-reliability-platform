@@ -158,3 +158,38 @@ When worker stops processing jobs → alert should move to **FIRING** state.
 ![Alert Firing](screenshots/06-alert-firing.png)
 
 ---
+
+---
+
+### Step 8 — Observe System Before Load
+
+Open Grafana Dashboard:
+
+http://localhost:3000
+
+Observe system metrics when there is **no traffic**.
+
+You will notice:
+
+- Jobs Processed metric is flat or near zero  
+- Worker Active Jobs is zero  
+- System is stable  
+
+This represents the **baseline system state**.
+
+📸 Screenshot:
+
+![Before Load](screenshots/07-before-load.png)
+
+---
+
+### Step 9 — Run Load Generator
+
+Open a new terminal and run:
+
+```bash
+cd load-generator
+python3 load_test.py
+```
+
+---
