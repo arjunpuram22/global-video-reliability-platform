@@ -34,6 +34,9 @@ From the project root directory:
 ```bash
 docker compose up --build
 ```
+📸 Screenshot:
+
+![Docker Services Running](screenshots/01-docker-services-running.png)
 
 ---
 
