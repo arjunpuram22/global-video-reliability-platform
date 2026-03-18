@@ -34,9 +34,6 @@ From the project root directory:
 ```bash
 docker compose up --build
 ```
-📸 Screenshot:
-
-![Docker Services Running](screenshots/01-docker-services-running.png)
 
 ---
 
@@ -47,6 +44,11 @@ Open a **new terminal window** and run:
 ```bash
 docker compose ps
 ```
+
+📸 Screenshot:
+
+![Docker Services Running](screenshots/01-docker-services-running.png)
+
 ---
 
 ### Step 3 — Verify Prometheus Targets
