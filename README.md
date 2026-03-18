@@ -231,3 +231,60 @@ This demonstrates **system recovery behavior after a traffic spike**, which is a
 ![After Load](screenshots/09-after-load.png)
 
 ---
+
+---
+
+### Step 12 — Reliability Observation Summary
+
+At this stage, the system behavior has been validated across three important conditions:
+
+- Idle system state (baseline)
+- Load spike during traffic simulation
+- System recovery after workload completion
+
+These observations confirm that:
+
+- Background workers process jobs asynchronously  
+- Queue backlog grows during spikes  
+- Monitoring dashboards reflect real-time workload changes  
+- System stabilizes automatically after traffic reduces  
+
+This demonstrates core Site Reliability Engineering concepts such as **observability, load handling, and recovery validation.**
+
+---
+
+### Step 13 — Stop the Monitoring Stack
+
+After completing the testing cycle, stop all running services.
+
+Run:
+
+```bash
+docker compose down
+```
+
+---
+
+### Step 14 — Restart the Monitoring Stack (Reproducibility Test)
+
+To validate that the entire monitoring environment can be redeployed consistently, restart all services.
+
+From the project root directory run:
+
+```bash
+docker compose up -d --build
+```
+
+---
+
+---
+
+### Step 15 — Final System Health Verification
+
+As a final validation step, confirm that all monitoring and application services are running successfully.
+
+Open a **new terminal window** and run:
+
+```bash
+docker compose ps
+```
