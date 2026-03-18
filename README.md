@@ -48,7 +48,7 @@ This architecture represents a simplified version of background processing pipel
 
 ## ⚙️ How to Run the Project
 
-### Step 1 — Start All Services
+### Step 1 - Start All Services
 
 From the project root directory:
 
@@ -58,7 +58,7 @@ docker compose up --build
 
 ---
 
-### Step 2 — Verify Containers Are Running
+### Step 2 - Verify Containers Are Running
 
 Open a **new terminal window** and run:
 
@@ -72,7 +72,7 @@ docker compose ps
 
 ---
 
-### Step 3 — Verify Prometheus Targets
+### Step 3 - Verify Prometheus Targets
 
 Open Prometheus in your browser:
 
@@ -95,7 +95,7 @@ This confirms Prometheus is successfully scraping metrics.
 
 ---
 
-### Step 4 — Verify Worker Metrics in Prometheus
+### Step 4 - Verify Worker Metrics in Prometheus
 
 In Prometheus UI go to:
 
@@ -114,7 +114,7 @@ This confirms worker metrics are being collected.
 
 ---
 
-### Step 5 — Configure Grafana Data Source
+### Step 5 - Configure Grafana Data Source
 
 Open Grafana:
 
@@ -142,7 +142,7 @@ You should see **Data source is working**.
 
 ---
 
-### Step 6 — Create Monitoring Dashboard
+### Step 6 - Create Monitoring Dashboard
 
 Create a new dashboard and add two panels:
 
@@ -164,7 +164,7 @@ Arrange both panels in the same dashboard.
 
 ---
 
-### Step 7 — Validate Alert Firing
+### Step 7 - Validate Alert Firing
 
 Create alert rule on metric:
 
@@ -179,7 +179,7 @@ When worker stops processing jobs → alert should move to **FIRING** state.
 
 ---
 
-### Step 8 — Observe System Before Load
+### Step 8 - Observe System Before Load
 
 Open Grafana Dashboard:
 
@@ -201,7 +201,7 @@ This represents the **baseline system state**.
 
 ---
 
-### Step 9 — Run Load Generator
+### Step 9 - Run Load Generator
 
 Open a new terminal and run:
 
@@ -215,7 +215,7 @@ python3 load_test.py
 
 ---
 
-### Step 10 — Observe Metrics During Load Spike
+### Step 10 - Observe Metrics During Load Spike
 
 While the load generator script is running, open the Grafana dashboard again:
 
@@ -237,7 +237,7 @@ This confirms that the system is **actively processing traffic and handling incr
 
 ---
 
-### Step 11 — Observe System Recovery After Load
+### Step 11 - Observe System Recovery After Load
 
 After the load generator finishes sending requests, refresh the Grafana dashboard again.
 
@@ -255,7 +255,7 @@ This demonstrates **system recovery behavior after a traffic spike**, which is a
 
 ---
 
-### Step 12 — Reliability Observation Summary
+### Step 12 - Reliability Observation Summary
 
 At this stage, the system behavior has been validated across three important conditions:
 
@@ -274,7 +274,7 @@ This demonstrates core Site Reliability Engineering concepts such as **observabi
 
 ---
 
-### Step 13 — Stop the Monitoring Stack
+### Step 13 - Stop the Monitoring Stack
 
 After completing the testing cycle, stop all running services.
 
@@ -286,7 +286,7 @@ docker compose down
 
 ---
 
-### Step 14 — Restart the Monitoring Stack (Reproducibility Test)
+### Step 14 - Restart the Monitoring Stack (Reproducibility Test)
 
 To validate that the entire monitoring environment can be redeployed consistently, restart all services.
 
@@ -298,7 +298,7 @@ docker compose up -d --build
 
 ---
 
-### Step 15 — Final System Health Verification
+### Step 15 - Final System Health Verification
 
 As a final validation step, confirm that all monitoring and application services are running successfully.
 
