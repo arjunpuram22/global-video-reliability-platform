@@ -33,3 +33,15 @@ From the project root directory:
 
 ```bash
 docker compose up --build
+```
+
+---
+
+### Step 2 — Verify Containers Are Running
+
+Open a **new terminal window** and run:
+
+```bash
+docker compose ps
+```
+
