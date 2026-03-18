@@ -232,8 +232,6 @@ This demonstrates **system recovery behavior after a traffic spike**, which is a
 
 ---
 
----
-
 ### Step 12 — Reliability Observation Summary
 
 At this stage, the system behavior has been validated across three important conditions:
