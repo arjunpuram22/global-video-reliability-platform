@@ -275,8 +275,6 @@ docker compose up -d --build
 
 ---
 
----
-
 ### Step 15 — Final System Health Verification
 
 As a final validation step, confirm that all monitoring and application services are running successfully.
@@ -286,8 +284,6 @@ Open a **new terminal window** and run:
 ```bash
 docker compose ps
 ```
-
----
 
 ---
 
