@@ -1,0 +1,17 @@
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  upload-service:
+    build: ./upload-service
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  worker-service:
+    build: ./worker-service
+    depends_on:
+      - redis
