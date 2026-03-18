@@ -159,8 +159,6 @@ When worker stops processing jobs → alert should move to **FIRING** state.
 
 ---
 
----
-
 ### Step 8 — Observe System Before Load
 
 Open Grafana Dashboard:
@@ -191,5 +189,45 @@ Open a new terminal and run:
 cd load-generator
 python3 load_test.py
 ```
+
+---
+
+### Step 10 — Observe Metrics During Load Spike
+
+While the load generator script is running, open the Grafana dashboard again:
+
+http://localhost:3000
+
+Refresh the dashboard.
+
+You will notice:
+
+- Jobs Processed metric increasing continuously  
+- Worker Active Jobs rising due to queued workload  
+- Clear spike pattern visible in the time-series graphs  
+
+This confirms that the system is **actively processing traffic and handling increased load.**
+
+📸 Screenshot:
+
+![During Load](screenshots/08-during-load.png)
+
+---
+
+### Step 11 — Observe System Recovery After Load
+
+After the load generator finishes sending requests, refresh the Grafana dashboard again.
+
+You will observe:
+
+- Worker Active Jobs gradually returning to zero  
+- Queue backlog getting cleared  
+- Metrics stabilizing back to normal levels  
+
+This demonstrates **system recovery behavior after a traffic spike**, which is a key reliability indicator.
+
+📸 Screenshot:
+
+![After Load](screenshots/09-after-load.png)
 
 ---
