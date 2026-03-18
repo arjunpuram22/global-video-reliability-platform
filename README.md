@@ -189,6 +189,9 @@ Open a new terminal and run:
 cd load-generator
 python3 load_test.py
 ```
+📸 Screenshot:
+
+![Load Generator Running](screenshots/10-load-generator-running.png)
 
 ---
 
