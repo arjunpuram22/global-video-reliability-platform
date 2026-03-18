@@ -142,21 +142,14 @@ You should see **Data source is working**.
 
 ---
 
-### Step 6 - Create Monitoring Dashboard
+### Step 6 - Open Monitoring Dashboard
 
-Create a new dashboard and add two panels:
+Open the Grafana dashboard and verify that both monitoring panels are available:
 
-Panel 1 Query:
+- Jobs Processed Over Time
+- Worker Active Jobs
 
-jobs_processed_total
-
-Panel 2 Query:
-
-worker_active_jobs
-
-Set visualization to **Time Series**.
-
-Arrange both panels in the same dashboard.
+This dashboard provides visibility into worker throughput and queue processing activity.
 
 📸 Screenshot:
 
@@ -166,12 +159,11 @@ Arrange both panels in the same dashboard.
 
 ### Step 7 - Validate Alert Firing
 
-Create alert rule on metric:
+Create an alert rule to detect unexpected drops in worker processing activity during active workload.
 
-Create alert rule when worker activity drops unexpectedly during active workload.
-Evaluation time: 1 minute
+Set the evaluation window to **1 minute**.
 
-When worker stops processing jobs → alert should move to **FIRING** state.
+When the worker stops processing jobs, the alert should move to **FIRING** state.
 
 📸 Screenshot:
 
@@ -209,6 +201,7 @@ Open a new terminal and run:
 cd load-generator
 python3 load_test.py
 ```
+This script sends multiple job requests and increases queue depth, simulating a traffic spike scenario.
 📸 Screenshot:
 
 ![Load Generator Running](screenshots/10-load-generator-running.png)
