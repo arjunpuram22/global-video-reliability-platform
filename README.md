@@ -288,3 +288,25 @@ Open a **new terminal window** and run:
 ```bash
 docker compose ps
 ```
+
+---
+
+---
+
+## 🎯 Key Takeaways
+
+This project demonstrates how system reliability can be validated using monitoring, alerting, and load simulation techniques.
+
+It highlights the importance of observing system behavior during traffic spikes, detecting failures early through alerts, and confirming recovery after workload stabilization.
+
+---
+
+## 🚀 Future Scope
+
+This platform can be further improved by introducing worker auto-scaling, Kubernetes deployment, and distributed tracing for deeper observability.
+
+Additional enhancements such as automated alert notifications, load balancing strategies, rate limiting, and chaos testing can help validate resilience under unexpected failure scenarios.
+
+These improvements would make the system closer to real production reliability standards used in large-scale video processing platforms.
+
+---
