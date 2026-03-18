@@ -33,3 +33,12 @@ From the project root directory:
 
 ```bash
 docker compose up --build
+
+---
+
+### Step 2 — Verify Containers Are Running
+
+After starting the stack, confirm all services are up:
+
+```bash
+docker compose ps
