@@ -10,6 +10,16 @@ This project focuses not only on building services but also on **observing syste
 
 ---
 
+## ❗ Problem Statement
+
+Modern video platforms process large volumes of background jobs such as video uploads, transcoding, and metadata processing.
+
+During sudden traffic spikes, queues can grow rapidly and worker failures may go unnoticed without proper monitoring.
+
+This project demonstrates how monitoring dashboards, alerting mechanisms, and controlled load testing can help engineers understand system behavior and ensure reliability under varying workload conditions.
+
+---
+
 ## 🏗️ System Architecture
 
 The platform consists of the following components:
@@ -22,6 +32,17 @@ The platform consists of the following components:
 - **Load Generator** — Simulates traffic spikes and stress conditions
 
 This architecture represents a simplified version of background processing pipelines used in large-scale video platforms.
+
+---
+
+### 🔄 Processing Flow
+
+1. Client sends upload request to Upload Service  
+2. Job is pushed into Redis queue  
+3. Worker Service consumes jobs asynchronously  
+4. Prometheus continuously scrapes worker metrics  
+5. Grafana visualizes system workload and health  
+6. Alerts are triggered if processing stalls  
 
 ---
 
@@ -147,8 +168,7 @@ Arrange both panels in the same dashboard.
 
 Create alert rule on metric:
 
-worker_active_jobs == 0
-
+Create alert rule when worker activity drops unexpectedly during active workload.
 Evaluation time: 1 minute
 
 When worker stops processing jobs → alert should move to **FIRING** state.
