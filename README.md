@@ -37,7 +37,7 @@ This architecture represents a simplified version of asynchronous background pro
 
 ---
 
-## 🔄 Processing Flow
+## Processing Flow
 
 1. Client sends upload request to the Upload Service  
 2. Job is enqueued into Redis queue  
@@ -45,6 +45,17 @@ This architecture represents a simplified version of asynchronous background pro
 4. Prometheus scrapes metrics exposed by services  
 5. Grafana visualizes system workload and health trends  
 6. Alerts are triggered if worker processing stalls or queue backlog increases
+
+---
+
+## Tech Stack
+
+- Python (FastAPI) for backend services
+- Redis for asynchronous job queueing
+- Prometheus for metrics collection and monitoring
+- Grafana for visualization dashboards and alerting
+- Docker & Docker Compose for containerized deployment
+- Custom Python load generator for traffic simulation
 
 ---
 
