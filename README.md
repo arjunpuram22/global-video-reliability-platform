@@ -1,6 +1,6 @@
-# 🎬 Global Video Reliability Platform — SRE Monitoring Project
+# Global Video Reliability Platform — SRE Monitoring Project
 
-## 📌 Project Overview
+## Project Overview
 
 This project demonstrates how a distributed video processing system can be monitored and validated using modern Site Reliability Engineering (SRE) practices.
 
@@ -10,7 +10,7 @@ This project focuses not only on building services but also on **observing syste
 
 ---
 
-## ❗ Problem Statement
+## Problem Statement
 
 Modern video platforms process large volumes of background jobs such as video uploads, transcoding, and metadata processing.
 
@@ -20,18 +20,18 @@ This project demonstrates how monitoring dashboards, alerting mechanisms, and co
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ![System Architecture](screenshots/architecture-async-job-processing-observability.png)
 
 The platform consists of the following core components:
 
-- **Upload Service** — Receives incoming job requests and pushes them into the queue  
-- **Worker Service** — Processes queued jobs asynchronously in the background  
-- **Redis** — Acts as the job queue backend enabling decoupled processing  
-- **Prometheus** — Collects and stores system performance metrics  
-- **Grafana** — Provides visualization dashboards and alerting capabilities  
-- **Load Generator** — Simulates traffic spikes and stress conditions  
+- **Upload Service** - Receives incoming job requests and pushes them into the queue  
+- **Worker Service** - Processes queued jobs asynchronously in the background  
+- **Redis** - Acts as the job queue backend enabling decoupled processing  
+- **Prometheus** - Collects and stores system performance metrics  
+- **Grafana** - Provides visualization dashboards and alerting capabilities  
+- **Load Generator** - Simulates traffic spikes and stress conditions  
 
 This architecture represents a simplified version of asynchronous background processing pipelines used in large-scale video processing platforms.
 
