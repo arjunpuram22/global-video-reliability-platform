@@ -1,39 +1,3 @@
-## 🧭 System Architecture Diagram
-
-```mermaid
-flowchart LR
-
-Client["User / Load Generator"]
-
-Upload["Upload Service
-(FastAPI API Layer)"]
-
-Redis["Redis Queue
-(Job Buffer)"]
-
-Worker["Worker Service
-(Background Processor)"]
-
-Prometheus["Prometheus
-(Metrics Scraper)"]
-
-Grafana["Grafana
-(Dashboard & Alerts)"]
-
-Alert["Alert State
-(Firing / OK)"]
-
-Client -->|POST Upload Request| Upload
-Upload -->|Enqueue Job| Redis
-Worker -->|Consume Job| Redis
-
-Upload -->|Expose Metrics| Prometheus
-Worker -->|Expose Metrics| Prometheus
-
-Prometheus -->|Query Metrics| Grafana
-Grafana -->|Trigger Alert| Alert
-```
-
 # 🎬 Global Video Reliability Platform — SRE Monitoring Project
 
 ## 📌 Project Overview
