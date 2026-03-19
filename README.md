@@ -1,4 +1,4 @@
-# Global Video Reliability Platform — SRE Monitoring Project
+# Global Video Reliability Platform - SRE Monitoring Project
 
 ## Project Overview
 
