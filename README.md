@@ -22,27 +22,29 @@ This project demonstrates how monitoring dashboards, alerting mechanisms, and co
 
 ## 🏗️ System Architecture
 
-The platform consists of the following components:
+![System Architecture](screenshots/architecture-async-job-processing-observability.png)
 
-- **Upload Service** — Receives incoming job requests
-- **Worker Service** — Processes queued jobs asynchronously
-- **Redis** — Acts as the job queue backend
-- **Prometheus** — Collects and stores system metrics
-- **Grafana** — Provides visualization dashboards and alerting
-- **Load Generator** — Simulates traffic spikes and stress conditions
+The platform consists of the following core components:
 
-This architecture represents a simplified version of background processing pipelines used in large-scale video platforms.
+- **Upload Service** — Receives incoming job requests and pushes them into the queue  
+- **Worker Service** — Processes queued jobs asynchronously in the background  
+- **Redis** — Acts as the job queue backend enabling decoupled processing  
+- **Prometheus** — Collects and stores system performance metrics  
+- **Grafana** — Provides visualization dashboards and alerting capabilities  
+- **Load Generator** — Simulates traffic spikes and stress conditions  
+
+This architecture represents a simplified version of asynchronous background processing pipelines used in large-scale video processing platforms.
 
 ---
 
-### 🔄 Processing Flow
+## 🔄 Processing Flow
 
-1. Client sends upload request to Upload Service  
-2. Job is pushed into Redis queue  
-3. Worker Service consumes jobs asynchronously  
-4. Prometheus continuously scrapes worker metrics  
-5. Grafana visualizes system workload and health  
-6. Alerts are triggered if processing stalls  
+1. Client sends upload request to the Upload Service  
+2. Job is enqueued into Redis queue  
+3. Worker Service continuously polls and processes jobs  
+4. Prometheus scrapes metrics exposed by services  
+5. Grafana visualizes system workload and health trends  
+6. Alerts are triggered if worker processing stalls or queue backlog increases
 
 ---
 
